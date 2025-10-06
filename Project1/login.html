@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+
+                background-color: lightgray;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                font-family: Arial, sans-serif;
+            }
+
+            .form-box {
+                background: white;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 0 15px grey;
+                width: 350px;
+            }
+
+            .form-box:hover {
+                background: lightyellow;
+                border: 1px solid red;
+            }
+
+            h2 {
+                text-align: center;
+                color: maroon;
+                margin-bottom: 20px;
+            }
+
+            input {
+                width: 94%;
+                padding: 10px;
+                margin: 8px 0;
+                border: 1px solid gray;
+                border-radius: 6px;
+            }
+
+            button {
+                width: 100%;
+                padding: 12px;
+                background-color: darkgreen;
+                color: white;
+                font-size: 16px;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background: blue;
+            }
+
+            .link {
+                margin-top: 20px;
+                text-align: center;
+            }
+
+            .link a {
+                color: blue;
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="form-box">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="text" id="loginUser" placeholder="Username" required>
+                <input type="password" id="loginPass" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <div class="link">
+                Don’t have an account? <a href="http://127.0.0.1:5500/Porfolio/register.html">Register</a>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById('loginForm').addEventListener('submit', function
+                (e) {
+                e.preventDefault();
+                const user = document.getElementById('loginUser').value;
+                const pass = document.getElementById('loginPass').value;
+                if (user && pass) {
+                    alert("Welcome, " + user + "! You are now logged in.");
+                    // redirect or store session here
+                }
+            });
+        </script>
+    </body>
+
+    </html>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - City Hospital</title>
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: lightblue;
+            text-align: center;
+        }
+
+        header {
+            background: black;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+        }
+
+        section {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px blue, -2px -2px 10px grey;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px grey;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input,
+        textarea {
+            padding: 10px;
+            width: 95%;
+            border: 1px solid blue;
+            border-radius: 5px;
+        }
+
+        button {
+            background: red;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: black;
+        }
+    </style>
+</head>
+
+<body>
+    <header>Contact own Hospital</header>
+    <section>
+        <h2>Get in Touch</h2>
+        <p><strong>Address:</strong> 123 Health Street, Lucknow, India</p>
+        <p><strong>Email:</strong> contact@ownhospital.com</p>
+        <p><strong>Phone:</strong> +91 0000000065</p>
+    </section>
+    <section>
+        <h2>Contact Form</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    <script>
+        document.getElementById("contactForm").addEventListener("submit",
+            function (event) {
+                event.preventDefault();
+                alert("Thank you! We will get back to you soon.");
+            });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: lightyellow;
+        }
+
+        div {
+            width: 350px;
+            height: 1500px;
+            border: 2px solid red;
+            background-color: lightgreen;
+        }
+
+        fieldset {
+            width: 260px;
+            margin-left: 30px;
+            margin-top: 20px;
+            border: 2px solid blue;
+        }
+
+        input {
+            margin: 5px;
+
+        }
+
+        #abc {
+            width: 160px;
+            height: 25px;
+        }
+
+        legend {
+            color: darkblue;
+            font-weight: bold;
+        }
+
+        #box {
+            width: 170px;
+            height: 25px;
+        }
+
+        .item {
+            background-color: blue;
+            border: 2px solid black;
+            width: 100px;
+            margin-left: 30px;
+        }
+
+        .item:hover {
+            background-color: lightblue;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form>
+            <fieldset>
+                <legend>Personal Deatils</legend>
+                <label>Full Name:</label><br>
+                <input type="text"><br><br>
+                <label>Date of Birth:</label><br>
+                <input type="date" id="abc"><br><br>
+                <lable>Gender:</lable>
+                <input type="radio">Male
+                <input type="radio">Female
+                <input type="radio">Other
+                <br><br>
+
+                <lable>Netionality Details:</lable><br>
+                <input type="text"><br><br>
+            </fieldset>
+            <fieldset>
+                <legend>Contect Details</legend>
+                <label>Address:</label><br>
+                <input type="text"><br><br>
+                <label>Phone Number:</label><br>
+                <input type="number"><br><br>
+                <label>Email:</label><br>
+                <input type="Email"><br><br>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Education Background</legend>
+                <label>High School Name:</label>
+                <input type="text"><br><br>
+                <label>Year of Passing:</label>
+                <input type="text"><br><br>
+                <label>Percentage/Grade:</label>
+                <input type="Grade"><br><br>
+                <label>preferred Course:</label><br>
+                <select id="box">
+                    <option>--Seclect Course--</option>
+                    <option>Mathmatics</option>
+                    <option>Science</option>
+                    <option>Biology</option>
+                </select>
+                <br><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>
+                    Upload Document
+                </legend>
+                <label>Passport Size Photo:</label>
+                <input type="file"><br><br>
+                <label>10th Marksheet:</label>
+                <input type="file"><br><br>
+                <label>12th Marksheet:</label>
+                <input type="file"><br><br>
+            </fieldset>
+            <fieldset>
+                <legend>Declaration</legend>
+                <label></label>
+                <input type="checkbox">I hereby declare that all the information provided is true and correct.
+
+            </fieldset><br><br>
+            <input type="submit" placeholder="Submited" class="item"><br><b></b><br>
+            <input type="reset" placeholder="Delete" class="item">
+        </form>
+    </div>
+</body>
+
+</html>

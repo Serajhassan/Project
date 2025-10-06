@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+    <title>Split Layout Registration Form</title>
+    <style>
+        body {
+            background-image: url(https://wallpapers.com/images/file/image-background-02pncybdeif1jvym.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            min-height: 100vh;
+            background-color: white;
+        }
+
+        .split-layout {
+            display: flex;
+        }
+
+        .left-panel {
+            color: maroon;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .left-panel h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .left-panel p {
+            font-size: 30px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .right-panel {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            background-color: lightblue;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            background: brown;
+            box-shadow: 0 8px 20px black;
+            border-radius: 12px;
+        }
+
+        .form-container h2 {
+            font-size: 30px;
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid white;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-size: 20px;
+            color: white;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border: 1px solid blue;
+            border-radius: 8px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: red;
+            box-shadow: 0 0 6px blue;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 12px;
+            background: red;
+            color: white;
+            font-size: 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .form-group button:hover {
+            background: none;
+            transform: translateY(-2px);
+        }
+
+        .error-message {
+            color: red;
+            font-size: 10px;
+            margin-bottom: 15px;
+            display: none;
+            text-align: center;
+        }
+
+        .alert-box {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #e6f7f8;
+            border: 1px solid #0a9396;
+            color: #005f73;
+            text-align: left;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .alert-box h3 {
+            margin: 0 0 10px;
+            font-size: 1.25rem;
+            color: #0a9396;
+        }
+
+        @media (max-width: 768px) {
+            .split-layout {
+                flex-direction: column;
+            }
+
+            .left-panel,
+            .right-panel {
+                width: 100%;
+            }
+
+            .left-panel {
+                padding: 20px;
+            }
+
+            .right-panel {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="split-layout">
+        <!-- Left Panel -->
+        <div class="left-panel">
+            <h1>Welcome Back!</h1>
+            <p>Register to gain access to your personalized
+                dashboard and exclusive
+                features.</p>
+        </div>
+        <!-- Right Panel -->
+        <div class="right-panel">
+            <div class="form-container">
+                <h2>Register</h2>
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm
+                            Password:</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    </div>
+                    <div class="error-message" id="errorMessage">Passwords do not match!</div>
+                    <div class="form-group">
+                        <button type="submit">Register</button>
+                    </div>
+                </form>
+                <div class="alert-box" id="confirmationBox">
+                    <h3>Success!</h3>
+                    <p>You have successfully registered.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const form =
+            document.getElementById('registrationForm');
+        const errorMessage =
+            document.getElementById('errorMessage');
+        const confirmationBox =
+            document.getElementById('confirmationBox');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const password =
+                document.getElementById('password').value;
+            const confirmPassword =
+                document.getElementById('confirmPassword').value;
+            if (password !== confirmPassword) {
+                errorMessage.style.display = 'block';
+                return;
+            } else {
+                errorMessage.style.display = 'none';
+            }
+            // Hide the form and show the confirmation message
+            form.style.display = 'none';
+            confirmationBox.style.display = 'block';
+        });
+    </script>
+</body>
+
+</html>

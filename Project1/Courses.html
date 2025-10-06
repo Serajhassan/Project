@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+        }
+
+        Header {
+            background-color: blue;
+            text-align: center;
+            padding: 10px;
+            color: white;
+
+        }
+
+        h3 {
+            color: green;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .Courses {
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            width: 1000px;
+            height: 500px;
+            margin-left: 120px;
+        }
+
+        .Course {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgb(54, 153, 178),0 0 20px lightskyblue,0 0 50px lightskyblue,0 0 50px lightskyblue;
+            transition: transform 0.2s ease;
+
+        }
+
+        .Course:hover {
+            transform: translateY(10px);
+        }
+
+        .Course h3 {
+            padding-right: 100px;
+            color: red;
+        }
+
+        .Course p {
+            padding-left: 20px;
+            color: blue;
+            font-size: 14px;
+        }
+
+        footer {
+            background: green;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Bright Future Academy</h1>
+        <p>Explore our featured Courses</p>
+    </header>
+    <h3>Courses Offered</h3>
+    <div class="Courses">
+        <div class="Course">
+            <h3>Mathmatics Mastery</h3>
+            <p>Sharpen analytical thinking and tackle Olympiad and board-level problems with ease.</p>
+        </div>
+        <div class="Course">
+            <h3>Science Explorers</h3>
+            <p>Explore concepts in Physics, Chemistry & Biology with engaging visuals and lab simulations.</p>
+        </div>
+        <div class="Course">
+            <h3>Commerce Basics</h3>
+            <p>Understand business, accounting, and economics in real-world scenarios.</p>
+        </div>
+        <div class="Course">
+            <h3>Humanities & Social Sciences</h3>
+            <p>Develop perspectives on history, society, and civics through critical thinking activities.</p>
+        </div>
+        <div class="Course">
+            <h3>English Communication</h3>
+            <p>Master grammar, writing, and public speaking with practical exercises.</p>
+        </div>
+        <div class="Course">
+            <h3>Computer Fundamental</h3>
+            <p>Learn the basics of computing, MS Office tools, and introductory coding skills.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Bright Future Academy | All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
